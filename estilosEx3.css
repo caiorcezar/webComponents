@@ -1,0 +1,15 @@
+:host{
+    display: inline-flex;
+
+}
+
+span{
+    display: inline-block;
+    min-width: 2em;
+    font-size: 3em;
+}
+
+button{
+    display: block;
+    margin-left: 1em;
+}
