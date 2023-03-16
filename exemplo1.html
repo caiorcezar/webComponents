@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components - Exemplo 1</title>
+
+    <script>
+        class HelloWorldElement extends HTMLElement {
+            constructor(){
+                super();
+
+                this.attachShadow({mode: 'open'});
+
+                const span = document.createElement('span');
+                span.textContent = 'Hello World!';
+                this.shadowRoot.append(span)
+            }
+        }
+        customElements.define("hello-world", HelloWorldElement)
+        
+        class myButton extends HTMLElement{
+            constructor(){
+                super();
+                this.attachShadow({mode: 'open'});
+
+                const botao = document.createElement('button');
+                botao.textContent = 'Clique Aqui!';
+                this.shadowRoot.append(botao)
+            }
+        }
+        customElements.define('my-button', myButton)
+    </script>
+</head>
+<body>
+    <h1>Exemplo 1</h1>
+    <hello-world></hello-world>
+    <my-button></my-button>
+</body>
+
+</html>
